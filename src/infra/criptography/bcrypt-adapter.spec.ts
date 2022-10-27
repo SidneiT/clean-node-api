@@ -30,4 +30,15 @@ describe('Bcrypt Adapter', () => {
 
     expect(hash).toBe('hash_value')
   })
+
+  test('Should throw if bcrypt throw', async () => {
+    const sut = makeSut()
+
+    // @ts-expect-error: Unreachable code error
+    jest.spyOn(bcrypt, 'hash').mockReturnValueOnce(Promise.reject(new Error()))
+
+    const promise = sut.encrypt('any_value')
+
+    await expect(promise).rejects.toThrow()
+  })
 })
