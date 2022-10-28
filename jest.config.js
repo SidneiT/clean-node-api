@@ -11,8 +11,7 @@ module.exports = {
   preset: '@shelf/jest-mongodb',
   transform: {
     '.+\\.ts$': 'ts-jest'
-  },
-  watchPathIgnorePatterns: ['globalConfig']
+  }
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
