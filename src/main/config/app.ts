@@ -5,7 +5,7 @@ import routes from './routes'
 
 const app = express()
 
-routes(app)
 middlewares(app)
+routes(app)
 
 export default app
